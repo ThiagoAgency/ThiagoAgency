@@ -1,71 +1,89 @@
 ---
 // Layout Imports
-import Layout from '../layouts/Layout.astro';
-import SectionLayout from '../layouts/SectionLayout.astro';
+import Layout from "../layouts/Layout.astro";
+import SectionLayout from "../layouts/SectionLayout.astro";
 
 // Component Imports
-import Hero from '../components/Hero/Hero.astro';
-import Title from '../components/Title/Title.astro';
-import Card from '../components/Card/Card.astro';
-import Logo from '../components/Assets/LogoIpsum.svg';
-
-
+import Hero from "../components/Hero/Hero.astro";
+import Title from "../components/Title/Title.astro";
+import Card from "../components/Card/Card.astro";
+import Logo from "../components/Assets/LogoIpsum.svg";
+import TextSlider from "../components/TextSlider/TextSlider.astro";
 ---
 
 <Layout title="Welcome to Astro.">
     <Hero />
+    <div class="flex flex-col justify-center content-center text-center">
+        <div class="mx-auto">
+            <span>
+                <TextSlider direction="right" color="text-orange-600" />
+            </span>
+
+            <span>
+                <TextSlider direction="left" color="text-black" />
+            </span>
+        </div>
+    </div>
+
     <SectionLayout>
-       <Title  content='Lugares Populares'/>
-        <div class="flex flex-wrap">
-            <Card
-                cardImg={'/ValleLuna.jpg'}
-                cardTitle={"Valle de la Luna"}
-                cardQualification={4.5}
-                cardUbication={'San Pedro de Atacama'}
-            />
+        <Title content="Lugares Populares" />
+        <div class="flex flex-wrap justify-center">
+            <div class="flex flex-wrap justify-center">
+                <Card
+                    cardImg={"/ValleLuna.jpg"}
+                    cardTitle={"Valle de la Luna"}
+                    cardQualification={4.5}
+                    cardUbication={"San Pedro de Atacama"}
+                />
 
-            <Card
-                cardImg={'/LagunaSalar.jpg'}
-                cardTitle={"Laguna Cejar"}
-                cardQualification={4.5}
-                cardUbication={'San Pedro de Atacama'}
-            />
+                <Card
+                    cardImg={"/LagunaSalar.jpg"}
+                    cardTitle={"Laguna Cejar"}
+                    cardQualification={4.5}
+                    cardUbication={"San Pedro de Atacama"}
+                />
 
-            <Card
-                cardImg={'/SanPedroAtacama.png'}
-                cardTitle={"San Pedro Atacama"}
-                cardQualification={4.5}
-                cardUbication={'San Pedro de Atacama'}
-            />
+                <Card
+                    cardImg={"/SanPedroAtacama.png"}
+                    cardTitle={"San Pedro Atacama"}
+                    cardQualification={4.5}
+                    cardUbication={"San Pedro de Atacama"}
+                />
+            </div>
+            <div class="flex flex-wrap justify-center">
+                <Card
+                    cardImg={"/ValleArcoIris.png"}
+                    cardTitle={"Valle Arcoiris"}
+                    cardQualification={4.5}
+                    cardUbication={"San Pedro de Atacama"}
+                />
 
-            <Card
-                cardImg={'/ValleArcoIris.png'}
-                cardTitle={"Valle Arcoiris"}
-                cardQualification={4.5}
-                cardUbication={'San Pedro de Atacama'}
-            />
-
-            <Card
-            cardImg={'/ValleLuna.jpg'}
-            cardTitle={"Valle de la Luna"}
-            cardQualification={4.5}
-            cardUbication={'San Pedro de Atacama'}
-        />
+                <Card
+                    cardImg={"/ValleLuna.jpg"}
+                    cardTitle={"Valle de la Luna"}
+                    cardQualification={4.5}
+                    cardUbication={"San Pedro de Atacama"}
+                />
+            </div>
         </div>
     </SectionLayout>
 
     <SectionLayout>
-        <Title content='¿Quienes Somos?' style='text-center'/>
+        <Title content="¿Quienes Somos?" style="text-center" />
         <div class="text-center">
-           <span class="max-w-[84rem] text-center">
-            En Thiago Agencia de Viajes, estamos apasionados por brindar experiencias de viaje inolvidables y personalizadas. <br> Nos hemos dedicado a hacer realidad los sueños de nuestros clientes y superar sus expectativas durante más de una década.
-           </span>
+            <span class="max-w-[84rem] text-center">
+                En Thiago Agencia de Viajes, estamos apasionados por brindar
+                experiencias de viaje inolvidables y personalizadas. <br /> Nos
+                hemos dedicado a hacer realidad los sueños de nuestros clientes
+                y superar sus expectativas durante más de una década.
+            </span>
 
-        
-            <img src={Logo.src} alt="Logo" width="300px" class="mx-auto my-10">
-          
+            <img
+                src={Logo.src}
+                alt="Logo"
+                width="300px"
+                class="mx-auto my-10"
+            />
         </div>
     </SectionLayout>
-
 </Layout>
-

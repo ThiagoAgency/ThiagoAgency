@@ -20,6 +20,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<header>
 		<InfoBar
 			twitterUrl='#Twitter'
 			twitterUser='ThiagoAgencycl'
@@ -29,6 +30,7 @@ const { title } = Astro.props;
 			email='hola@thiagoagency.cl'
 		/>
 		<NavBar />
+	</header>
 		<slot />
 	</body>
 </html>

@@ -3,22 +3,25 @@ import Location from '../Assets/Location.svg'
 import ImageHero from '../Assets/ImageHero.png'
 
 ---
-<section class="h-[32rem]  lg:px-40 lg:flex lg:justify-between lg:my-10">
+<section class="h-[32rem]  lg:px-40 lg:flex lg:justify-between lg:my-10 ">
 
-    <div class="my-auto max-w-fit ">
-        <span class="flex">
-            <img src={Location.src} alt="Location">
-            <h1 class="font-bold px-2">San Pedro de Atacama</h1>
-        </span>
-        <h1 class="font-extrabold text-6xl">TU AGENCIA</h1>
-        <h1 class="font-extrabold text-7xl pb-5">TURISTICA</h1>
-            <hr class="pb-5 border-orange-500">
-        <p>Somos Tu agencia de confiaza, ese amigo que te eneseña <br> a ver el mundo con otros ojos, ¿Que esperas para viajar?</p>
+    <div class="my-auto max-w-fit flex flex-wrap justify-center mx-auto pt-20">
+        <section>
+            <span class="flex">
+                <img src={Location.src} alt="Location">
+                <h1 class="font-bold px-2">San Pedro de Atacama</h1>
+            </span>
+            <h1 class="font-extrabold text-6xl">TU AGENCIA</h1>
+            <h1 class="font-extrabold text-7xl pb-5">TURISTICA</h1>
+                <hr class="pb-5 border-orange-500">
+            <p>Somos Tu agencia de confiaza, ese amigo que te eneseña <br> a ver el mundo con otros ojos, ¿Que esperas para viajar?</p>
+        </section>
+
         
     </div>
 
-    <div class="lg:my-auto lg:mx-36 w-[40rem]">
-         <img src={ImageHero.src} alt="" class="my-auto">
+    <div class="lg:my-auto lg:mx-36 w-[40rem] hidden lg:block ">
+         <img src={ImageHero.src} alt="" class="my-auto min-w-[400px]">
     </div>
 
 </section>
