@@ -1,0 +1,13 @@
+---
+    interface Props {
+        refer: string 
+        path: string;
+        alt: string;
+        classStyle?: string;
+    }
+
+    const { refer, path, alt, classStyle } = Astro.props;
+---
+    <a href={refer}>
+        <img src={path} alt={alt} class={classStyle} />
+    </a>

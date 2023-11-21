@@ -1,0 +1,31 @@
+---
+    import FacebookLogo from '../Assets/FacebookLogo.svg'
+    import TwitterLogo from  '../Assets/TwitterLogo.svg'
+
+    interface Props {
+        facebookUser: string,
+        facebookUrl: string,
+        twitterUser: string,
+        twitterUrl: string,
+        phoneNumber: string,
+        email: string,
+        w?: string,
+        h?: string
+    }
+
+    const { facebookUrl, facebookUser, twitterUser , twitterUrl, phoneNumber, email, w, h } = Astro.props;
+
+---
+
+<section class="lg:px-5 lg:py-3 lg:flex lg:justify-center lg:bg-indigo-900 lg:text-white hidden">
+    <a href={facebookUrl} class="flex px-5 font-bold">
+        <img src={FacebookLogo.src} alt="Facebook Logo" width={w} height={h} class="px-2"> 
+        {facebookUser}
+    </a>
+    <a href={twitterUrl} class="flex px-5 font-bold">
+        <img src={TwitterLogo.src} alt="Twitter Logo" width={w} height={h} class="px-2">
+        {twitterUser}
+    </a>
+    <p class="px-2 font-light">Número de Telefono: <span class="font-bold">{phoneNumber}</span></p>
+    <p class="px-2 font-light">Email: <span class="font-bold">{email}</span></p>
+</section>

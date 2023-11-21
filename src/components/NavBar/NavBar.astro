@@ -1,0 +1,39 @@
+---
+    // Import Section
+    import Logo from '../Logo/Logo.astro'
+    import LogoIpsum from '../Assets/LogoIpsum.svg'
+    
+    interface Props {
+        
+    }
+
+    const NavLinks = [
+        {site: "Inicio", ref: "/"},
+        {site: "Tours", ref: "/tours"},
+        {site: "Tours Especiales", ref: "/tours-especiales"},
+        {site: "Tours Adicionales", ref: "/tours-adicionales"},
+    ]
+---
+
+<nav class="lg:flex lg:justify-between p-5 bg-indigo-600 text-white">
+
+    <Logo
+     path={LogoIpsum.src}
+     alt=''
+     refer='/'
+     classStyle='justify-center text-center'
+     />
+     
+    <ul class="lg:flex lg:my-auto">
+        {
+            NavLinks.map((link) => {
+                return (
+                    <li class="lg:px-5 py-2 hover:text-violet-100">
+                        <a href={link.ref}>{link.site}</a>
+                    </li>
+                )
+            })
+        }
+    </ul>
+
+</nav>
