@@ -15,7 +15,7 @@
     ]
 ---
 
-<nav class="lg:flex lg:justify-between p-5 bg-indigo-600 text-white">
+<nav class="lg:flex lg:justify-between py-5 px-20 bg-orange-600 text-white">
 
     <Logo
      path={LogoIpsum.src}
@@ -28,8 +28,8 @@
         {
             NavLinks.map((link) => {
                 return (
-                    <li class="lg:px-5 py-2 hover:text-violet-100">
-                        <a href={link.ref}>{link.site}</a>
+                    <li class="lg:px-5 py-2">
+                        <a class="hover:text-orange-900" href={link.ref}>{link.site}</a>
                     </li>
                 )
             })
