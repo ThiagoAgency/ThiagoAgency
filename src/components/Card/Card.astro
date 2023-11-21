@@ -1,0 +1,28 @@
+---
+    import Location from '../Assets/Location.svg';
+    import Star from '../Assets/Star.svg';
+
+    interface Props {
+        cardImg: string,
+        cardTitle: string,
+        cardUbication: string,
+        cardQualification: number
+    };
+
+    const { cardImg, cardTitle, cardUbication, cardQualification } = Astro.props;
+---
+
+<div class="px-2 py-1 mr-5 mx-auto border rounded-lg bg-slate-50 hover:-translate-y-2 transition-all hover:shadow-xl hover:shadow-gray-400 cursor-pointer">
+    <img src={cardImg} alt={cardTitle} width="250px" class="py-2 ">
+    <span class="flex justify-between">
+        <h2 class="font-bold text-xl">{cardTitle}</h2>
+        <span class="flex px-1">
+            <img src={Star.src} alt="Star Icon">
+            <p class="px-2">{cardQualification}</p>
+        </span>
+    </span>
+    <span class="flex py-5">
+        <img src={Location.src} alt="Location Icon" class="pr-2">
+        <p>{cardUbication}</p>
+    </span>
+</div>

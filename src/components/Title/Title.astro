@@ -1,0 +1,10 @@
+---
+interface Props {
+    content: string,
+    style?: string
+}
+const { content, style } = Astro.props;
+
+const defaultStyle = "font-bold text-4xl py-5 ";
+---
+<h1 class={ defaultStyle + style }>{content}</h1>
