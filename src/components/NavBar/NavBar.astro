@@ -1,39 +1,65 @@
 ---
-    // Import Section
-    import Logo from '../Logo/Logo.astro'
-    import LogoIpsum from '../Assets/LogoIpsum.svg'
-    
-    interface Props {
-        
-    }
+// Import Section
+import Logo from "../Logo/Logo.astro";
+import LogoIpsum from "../Assets/LogoIpsum.svg";
+import Menu from '../NavBar/Menu.astro';
 
-    const NavLinks = [
-        {site: "Inicio", ref: "/"},
-        {site: "Tours", ref: "/tours"},
-        {site: "Tours Especiales", ref: "/tours-especiales"},
-        {site: "Tours Adicionales", ref: "/tours-adicionales"},
-    ]
+// Importing atom 
+import { isOpen } from '../../Store/store.js';
+import Dialog from  '../Dialog/Dialog.astro';
+
+interface Props {}
+
+const NavLinks = [
+    { site: "Inicio", ref: "/" },
+    { site: "Tours", ref: "/tours" },
+    { site: "Tours Especiales", ref: "/tours-especiales" },
+    { site: "Tours Adicionales", ref: "/tours-adicionales" },
+];
+
+
 ---
 
-<nav class="lg:flex lg:justify-between py-5 px-20 bg-orange-600 text-white">
+
+<nav class="flex justify-between py-5 px-20 bg-orange-600 text-white">
 
     <Logo
-     path={LogoIpsum.src}
-     alt=''
-     refer='/'
-     classStyle='justify-center text-center'
-     />
-     
-    <ul class="lg:flex lg:my-auto">
+        path={LogoIpsum.src}
+        alt=""
+        refer="/"
+        classStyle="justify-center text-center"
+    />
+
+
+    <ul class="lg:flex items-center gap-5 hidden">
         {
-            NavLinks.map((link) => {
-                return (
-                    <li class="lg:px-5 py-2">
-                        <a class="hover:text-orange-900" href={link.ref}>{link.site}</a>
-                    </li>
-                )
-            })
+            NavLinks.map((link) => (
+                <li class="">
+                    <a href={link.ref}>{link.site}</a>
+                </li>
+            ))
         }
     </ul>
 
+    <ul class="lg:hidden md:inline-flex items-center w-8 "> 
+        <button id="openDialog" class="w-8">
+            <Menu />
+        </button>
+    </ul>
+    
+
 </nav>
+
+<Dialog />
+<script>
+    import { isOpen } from '../../Store/store.js';
+    console.log(isOpen);
+    const openDialog = ()=> {
+        isOpen.set(!isOpen.value);
+        console.log(isOpen);
+    }
+
+
+
+    document.getElementById('openDialog').addEventListener('click', openDialog);
+</script>

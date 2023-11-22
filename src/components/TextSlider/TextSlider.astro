@@ -3,11 +3,11 @@
     direction: string,
     color: string
   }
-  const defaultStyle = "tag-list scroller__inner "
+  const defaultStyle = "tag-list scroller__inner overflow-hidden "
   const { direction, color } = Astro.props;
 ---
 
-<div class="scroller" data-speed="fast" data-direction={ direction }>
+<div class="scroller" data-speed="slow" data-direction={ direction }>
     <ul class={ defaultStyle + color}>
       <li class="font-extrabold text-3xl uppercase">Valle de la Luna</li>
       <li class="font-extrabold text-3xl uppercase">Laguna Cejar</li>

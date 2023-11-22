@@ -1,0 +1,45 @@
+---
+const NavLinks = [
+    { site: "Inicio", ref: "/" },
+    { site: "Tours", ref: "/tours" },
+    { site: "Tours Especiales", ref: "/tours-especiales" },
+    { site: "Tours Adicionales", ref: "/tours-adicionales" },
+];
+---
+
+<div class="hidden absolute z-20 bg-orange-600 h-screen w-screen" id="dialog">
+    <ul class="lg:flex items-center mx-auto text-white text-center font-bold text-2xl my-auto">
+        {
+            NavLinks.map((link) => (
+                <li class="py-5">
+                    <a href={link.ref}>{link.site}</a>
+                </li>
+            ))
+        }
+    </ul>
+</div>
+
+<script>
+    import { isOpen } from '../../Store/store.js';
+
+    console.info('dialog');
+
+    isOpen.subscribe(value => {
+        if (value) {
+            console.error('open');
+            const dialog = document.getElementById('dialog');
+
+            if (dialog) {
+                dialog.style.display = 'flex';
+            }
+        } else {
+            const dialog = document.getElementById('dialog');
+
+            if (dialog) {
+                dialog.style.display = 'none';
+            }
+        }
+        
+    });
+
+</script>
