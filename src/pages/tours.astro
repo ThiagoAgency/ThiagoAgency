@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import LargeCard from "../components/LargeCard/LargeCard.astro";
+import { ghostClient } from "../lib/ghost";
+
+const posts = await ghostClient.posts
+    .browse({
+        limit: "all",
+    })
+    .catch((err) => {
+        console.error(err);
+    });
+---
+
+<Layout title="Thiago | Tours">
+    <section class="bg-white dark:bg-gray-900">
+        <div class="container px-6 py-16 mx-auto text-center">
+            <div class="max-w-lg mx-auto">
+                <h1
+                    class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl"
+                >
+                    ¡Llego la hora de conocer el Norte de Chile!
+                </h1>
+                <p class="mt-6 text-gray-500 dark:text-gray-300">
+                    ¡Aventúrate en una experiencia inolvidable que te conectará
+                    con la asombrosa belleza del desierto y la riqueza cultural
+                    de esta maravillosa tierra ancestral!
+                </p>
+                <button
+                    class="px-5 py-2 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-green-600 rounded-lg hover:bg-green-500 lg:mx-0 lg:w-auto focus:outline-none"
+                >
+                    Contactame
+                </button>
+            </div>
+
+            <div class="flex justify-center mt-10">
+                <img
+                    class="object-cover w-full h-96 rounded-xl lg:w-4/5"
+                    src="ValleLuna.jpg"
+                />
+            </div>
+        </div>
+    </section>
+
+    <section class="text-gray-900 font-sans p-6">
+        <div class="flex flex-wrap">
+            {
+                posts.length > 0
+                    ? posts.map((post) => (
+                          <LargeCard
+                              tag={"Thiago Agency"}
+                              image={post.feature_image}
+                              destiny={post.title}
+                              description={post.excerpt}
+                          />
+                      ))
+                    : "Ups, No hay ningun tour por el momento."
+            }
+        </div>
+    </section>
+</Layout>

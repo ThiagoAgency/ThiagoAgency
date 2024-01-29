@@ -1,7 +1,6 @@
 ---
 // Import Section
 import Logo from "../Logo/Logo.astro";
-import LogoIpsum from "../Assets/LogoIpsum.svg";
 import Menu from '../NavBar/Menu.astro';
 
 // Importing atom 
@@ -13,15 +12,14 @@ interface Props {}
 const NavLinks = [
     { site: "Inicio", ref: "/" },
     { site: "Tours", ref: "/tours" },
-    { site: "Tours Especiales", ref: "/tours-especiales" },
-    { site: "Tours Adicionales", ref: "/tours-adicionales" },
+    { site: "Tours Especiales", ref: "/tours-adicionales" },
 ];
 
 
 ---
 
 
-<nav class="flex justify-between py-5 px-20 bg-orange-600 text-white">
+<nav class="flex justify-between py-5 px-20 bg-green-400 text-white">
 
     <Logo
         path={"/Logo.svg"}
