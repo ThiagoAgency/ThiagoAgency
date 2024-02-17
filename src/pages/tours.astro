@@ -4,41 +4,50 @@ import Layout from "../layouts/Layout.astro";
 import LargeCard from "../components/LargeCard/LargeCard.astro";
 import { ghostClient } from "../lib/ghost";
 
-const posts = await ghostClient.posts
+let posts = await ghostClient.posts
     .browse({
         limit: "all",
     })
     .catch((err) => {
         console.error(err);
     });
+
+posts = posts || [];
 ---
 
 <Layout title="Thiago | Tours">
-    <section class="bg-white dark:bg-gray-900">
-        <div class="container px-6 py-16 mx-auto text-center">
-            <div class="max-w-lg mx-auto">
-                <h1
-                    class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl"
-                >
-                    ¡Llego la hora de conocer el Norte de Chile!
-                </h1>
-                <p class="mt-6 text-gray-500 dark:text-gray-300">
-                    ¡Aventúrate en una experiencia inolvidable que te conectará
-                    con la asombrosa belleza del desierto y la riqueza cultural
-                    de esta maravillosa tierra ancestral!
-                </p>
-                <button
-                    class="px-5 py-2 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-green-600 rounded-lg hover:bg-green-500 lg:mx-0 lg:w-auto focus:outline-none"
-                >
-                    Contactame
-                </button>
-            </div>
+    <section class="bg-white">
+        <div
+            class="container flex flex-col items-center px-4 py-12 mx-auto text-center"
+        >
+            <h2
+                class="text-2xl font-bold tracking-tight text-gray-800 xl:text-3xl"
+            >
+                ¡Es hora de descubrir el encanto del Norte de Chile!
+            </h2>
 
-            <div class="flex justify-center mt-10">
-                <img
-                    class="object-cover w-full h-96 rounded-xl lg:w-4/5"
-                    src="ValleLuna.jpg"
-                />
+            <p class="block max-w-4xl mt-4 text-gray-500">
+                ¡Prepárate para explorar las maravillas del norte de Chile!
+                Descubre paisajes deslumbrantes, cultura fascinante y aventuras
+                inolvidables mientras te sumerges en la riqueza del desierto más
+                árido del mundo y sus encantos únicos. ¡Es hora de vivir una
+                experiencia inigualable en el norte chileno!
+            </p>
+
+            <div class="mt-6">
+                <a
+                    href="#"
+                    class="inline-flex items-center justify-center w-full px-4 py-2.5 overflow-hidden text-sm text-white transition-colors duration-300 bg-gray-900 rounded-lg shadow sm:w-auto sm:mx-2 hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80"
+                >
+                    <span class="mx-2"> Contactarme con un asesor.</span>
+                </a>
+
+                <a
+                    href="#"
+                    class="inline-flex items-center justify-center w-full px-4 py-2.5 mt-4 overflow-hidden text-sm text-white transition-colors duration-300 bg-green-600 rounded-lg shadow sm:w-auto sm:mx-2 sm:mt-0 hover:bg-green-500 focus:ring focus:ring-green-300 focus:ring-opacity-80"
+                >
+                    <span class="mx-2"> Ver todos los tours.</span>
+                </a>
             </div>
         </div>
     </section>
@@ -46,16 +55,31 @@ const posts = await ghostClient.posts
     <section class="text-gray-900 font-sans p-6">
         <div class="flex flex-wrap">
             {
-                posts.length > 0
-                    ? posts.map((post) => (
-                          <LargeCard
-                              tag={"Thiago Agency"}
-                              image={post.feature_image}
-                              destiny={post.title}
-                              description={post.excerpt}
-                          />
-                      ))
-                    : "Ups, No hay ningun tour por el momento."
+                posts.length > 0 ? (
+                    posts.map((post) => (
+                        <LargeCard
+                            tag={"Thiago Agency"}
+                            image={post.feature_image}
+                            destiny={post.title}
+                            description={post.excerpt}
+                        />
+                    ))
+                ) : (
+                    <div class="w-full mx-auto text-center">
+                        <span>
+                            <span class="text-green-500 font-bold">Ups</span>,
+                            No hay ningun tour por el momento o ha sucedido algo
+                            con nuestra API.
+                                <br>
+                                <br>
+                            Puedes contactarte con nosotros para ayudarnos a
+                            solucionar este problema escribiendonos a través de
+                            <span class="text-green-500">
+                                ingenieria@thiagoagency.com
+                            </span>
+                        </span>
+                    </div>
+                )
             }
         </div>
     </section>
