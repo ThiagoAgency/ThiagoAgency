@@ -1,31 +1,22 @@
 ---
-import Location from '../Assets/Location.svg'
-import ImageHero from '../Assets/ImageHero.png'
-
+import Location from "../Assets/Location.svg";
+import ImageHero from "../Assets/ImageHero.png";
+import ImageHero2 from "../Assets/Atacama.jpg";
+import HEROTEXT from "../Assets/HEROTEXT.svg";
+import Scroll from "../Assets/Scroll.png";
 ---
-<section class="flex sm:mx-10 sm:my-10">
 
-    <div class="my-auto max-w-fit flex flex-wrap justify-center mx-auto">
-        <section class="min-w-[2rem]">
-            <span class="flex">
-                <img src={Location.src} alt="Location">
-                <h1 class="font-bold px-2">San Pedro de Atacama</h1>
-            </span>
-            <h1 class="font-extrabold text-6xl">TU AGENCIA</h1>
-            <h1 class="font-extrabold text-7xl pb-5">TURISTICA</h1>
-                <hr class="pb-5 border-green-400">
-            <p class=" max-w-md">Somos Tu agencia de confiaza, ese amigo que te eneseña a ver el mundo con otros ojos, ¿Que esperas para viajar?</p>
-            <button class="w-96 py-3 my-10 rounded-lg bg-green-400 text-white font-bold hover:shadow-xl hover:shadow-green-400 transition-all">
-                ¡Quiero Viajar!
-            </button>
+<section class={' bg-cover bg-hero-pattern bg-no-repeat shadow-[inset_0px_-170px_100px_-50px_rgba(255,255,255,1)]'}>
+    <div class="flex justify-center pt-20">
+        <div class="flex flex-col  items-center gap-32 ">
+            <img src={HEROTEXT.src} alt="ImageHero" />
+            <a href="/contacto" class="rounded-full text-xl bg-black px-5 py-2 font-thin text-white border mb-10 tracking-widest">
+               ¡QUIERO VIAJAR!
+            </a>
+                <img src={Scroll.src} alt=""  class="mb-40">
 
-        </section>
+        </div>
 
-        
     </div>
-
-    <div class="lg:my-auto lg:mx-36 w-[40rem] hidden lg:block">
-         <img src={ImageHero.src} alt="" class="my-auto min-w-[350px]">
-    </div>
-
 </section>
+

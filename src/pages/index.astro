@@ -9,25 +9,19 @@ import Title from "../components/Title/Title.astro";
 import Card from "../components/Card/Card.astro";
 import TextSlider from "../components/TextSlider/TextSlider.astro";
 import ShowMore from "../components/ShowMore/ShowMore.astro";
+import PopularPlaces from "../components/Assets/PopularPlaces.svg";
 ---
 
 <Layout title="Thiago | Inicio">
     <Hero />
-    <div class="flex flex-col justify-center content-center text-center overflow-hidden">
-        <div class="mx-auto">
-            <span>
-                <TextSlider direction="right" color="text-green-400" />
-            </span>
-
-            <span>
-                <TextSlider direction="left" color="text-black" />
-            </span>
-        </div>
-    </div>
 
 <!-- ------ MODAL DE PAGO NO EFECTUADO ------ -->
     
-
+{
+  /*
+  
+  */
+}
     <div class="relative z-10" id="modal-nonpayment" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <!--
           Background backdrop, show/hide based on modal state.
@@ -80,8 +74,8 @@ import ShowMore from "../components/ShowMore/ShowMore.astro";
 
 <!-- ------ MODAL DE PAGO NO EFECTUADO ------ -->
 
-    <SectionLayout>
-        <Title content="Lugares Populares" style="my-10"/>
+    <SectionLayout class:list={' flex justify-center content-center items-center mx-auto'}>
+        <img src={PopularPlaces.src} alt="">
         <div class="grid md:grid-cols-4 grid-cols-1 gap-5 my-10">
             <!-- <div class=""> -->
 
@@ -115,6 +109,18 @@ import ShowMore from "../components/ShowMore/ShowMore.astro";
             <!-- </div> -->
         </div>
     </SectionLayout>
+
+    <div class="flex flex-col justify-center content-center text-center overflow-hidden">
+      <div class="mx-auto">
+          <span>
+              <TextSlider direction="right" color="text-green-400" />
+          </span>
+
+          <span>
+              <TextSlider direction="left" color="text-black" />
+          </span>
+      </div>
+  </div>
 
     <SectionLayout>
         <Title content="¿Quienes Somos?" style="text-center font-caveat" />

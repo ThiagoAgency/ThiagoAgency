@@ -5,7 +5,10 @@ export default {
 		extend: {
 			fontFamily: {
 				caveat: ['Caveat']
-			}
+			},
+			backgroundImage: theme => ({
+				'hero-pattern': "url('/src/components/Assets/Atacama.jpg')",
+			}),
 		},
 	},
 	plugins: [],

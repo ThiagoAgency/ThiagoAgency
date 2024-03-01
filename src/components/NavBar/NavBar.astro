@@ -13,13 +13,14 @@ const NavLinks = [
     { site: "Inicio", ref: "/" },
     { site: "Tours", ref: "/tours" },
     { site: "Contacto", ref: "/contacto" },
+    { site: "Legal", ref: "/Policies" },
 ];
 
 
 ---
 
 
-<nav class="flex justify-between py-5 px-20 bg-green-400 text-white">
+<nav class="flex relative justify-between py-5 px-20 z-100  text-white bg-gradient-to-r from-[#54647D] to-[#5A6F8C]/18 via-[#526F91] via-[#526F91] to-[#4F6B90]">
 
     <Logo
         path={"/Logo.svg"}
@@ -44,6 +45,10 @@ const NavLinks = [
             <Menu />
         </button>
     </ul>
+
+    <a href="/contacto" class="font-bold bg-black rounded-xl items-center text-center content-center py-2 px-5">
+        RESERVAR
+    </a>
     
 
 </nav>
@@ -61,3 +66,4 @@ const NavLinks = [
 
     document.getElementById('openDialog').addEventListener('click', openDialog);
 </script>
+<!--Hello -->
