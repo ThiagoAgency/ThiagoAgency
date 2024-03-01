@@ -2,68 +2,65 @@
 // Import Section
 import Logo from "../Logo/Logo.astro";
 import Menu from '../NavBar/Menu.astro';
+import Pluma from "../Assets/PLUMA.png"
+
 
 // Importing atom 
 import { isOpen } from '../../Store/store.js';
-import Dialog from  '../Dialog/Dialog.astro';
+import Dialog from '../Dialog/Dialog.astro';
 
 interface Props {}
 
 const NavLinks = [
-    { site: "Inicio", ref: "/" },
-    { site: "Tours", ref: "/tours" },
-    { site: "Contacto", ref: "/contacto" },
-    { site: "Legal", ref: "/Policies" },
+  { site: "Inicio", ref: "/" },
+  { site: "Tours", ref: "/tours" },
+  { site: "Contacto", ref: "/contacto" },
+  { site: "Legal", ref: "/Policies" },
 ];
-
 
 ---
 
+<nav class="flex relative justify-between py-5 px-20 z-100 text-white bg-gradient-to-r from-[#54647D] to-[#5A6F8C]/18 via-[#526F91] via-[#526F91] to-[#4F6B90]">
 
-<nav class="flex relative justify-between py-5 px-20 z-100  text-white bg-gradient-to-r from-[#54647D] to-[#5A6F8C]/18 via-[#526F91] via-[#526F91] to-[#4F6B90]">
+  <Logo
+    path={"/LOGOEXP.svg"}
+    alt=""
+    refer="/"
+    classStyle="justify-center text-center w-14"
+  />
 
-    <Logo
-        path={"/LOGOEXP.svg"}
-        alt=""
-        refer="/"
-        classStyle="justify-center text-center w-14"
-    />
+  <ul class="lg:flex items-center gap-5 hidden">
+    {
+      NavLinks.map((link) => (
+        <li class="">
+          <a href={link.ref}>{link.site}</a>
+          {window.location.pathname === link.ref && (
+            <span><img src={Pluma.src} alt="" width="30px"></span>
+          )}
+        </li>
+      ))
+    }
+  </ul>
 
+  <ul class="lg:hidden md:inline-flex items-center w-8 "> 
+    <button id="openDialog" class="w-8">
+      <Menu />
+    </button>
+  </ul>
 
-    <ul class="lg:flex items-center gap-5 hidden">
-        {
-            NavLinks.map((link) => (
-                <li class="">
-                    <a href={link.ref}>{link.site}</a>
-                </li>
-            ))
-        }
-    </ul>
-
-    <ul class="lg:hidden md:inline-flex items-center w-8 "> 
-        <button id="openDialog" class="w-8">
-            <Menu />
-        </button>
-    </ul>
-
-    <a href="/contacto" class="font-bold bg-black rounded-xl items-center text-center content-center py-2 px-5">
-        RESERVAR
-    </a>
-    
-
+  <a href="/contacto" class="font-bold bg-black rounded-xl items-center text-center content-center py-2 px-5">
+    RESERVAR
+  </a>
 </nav>
 
 <Dialog />
 <script>
-    import { isOpen } from '../../Store/store.js';
+  import { isOpen } from '../../Store/store.js';
+  console.log(isOpen);
+  const openDialog = ()=> {
+    isOpen.set(!isOpen.value);
     console.log(isOpen);
-    const openDialog = ()=> {
-        isOpen.set(!isOpen.value);
-        console.log(isOpen);
-    }
+  }
 
-
-
-    document.getElementById('openDialog').addEventListener('click', openDialog);
+  document.getElementById('openDialog').addEventListener('click', openDialog);
 </script>
-<!--Hello -->
