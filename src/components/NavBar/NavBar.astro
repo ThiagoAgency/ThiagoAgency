@@ -34,9 +34,6 @@ const NavLinks = [
       NavLinks.map((link) => (
         <li class="">
           <a href={link.ref}>{link.site}</a>
-          {window.location.pathname === link.ref && (
-            <span><img src={Pluma.src} alt="" width="30px"></span>
-          )}
         </li>
       ))
     }
