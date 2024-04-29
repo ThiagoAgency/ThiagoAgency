@@ -53,33 +53,75 @@ posts = posts || [];
     </section>
 
     <section class="text-gray-900 font-sans p-6">
-        <div class="flex flex-wrap">
-            {
-                posts.length > 0 ? (
-                    posts.map((post) => (
-                        <LargeCard
-                            tag={"Thiago Agency"}
-                            image={post.feature_image}
-                            destiny={post.title}
-                            description={post.excerpt}
-                        />
-                    ))
-                ) : (
-                    <div class="w-full mx-auto text-center">
-                        <span>
-                            <span class="text-green-500 font-bold">Ups</span>,
-                            Una vez el pago al desarrollador sea efectuado, la API será liberada.
-                                <br>
-                                <br>
-                            Puedes contactarte con nosotros para ayudarnos a
-                            solucionar este problema escribiendonos a través de
-                            <span class="text-green-500">
-                                ingenieria@thiagoagency.com
-                            </span>
-                        </span>
-                    </div>
-                )
-            }
+        <div class="flex flex-wrap justify-center">
+            <LargeCard
+                tag={"GEYSERS DEL TATIO"}
+                image={"https://www.gochile.cl/fotos/header/2396-dsc02672.jpg"}
+                destiny={"Geysers Del Tatio"}
+                description={"Explora los espectaculares geysers de El Tatio, con fauna y flora únicas, y visita el pueblo ancestral de Machuca. Incluye desayuno y guía bilingüe."}
+            />
+
+            <LargeCard
+                tag={"Piedras rojas"}
+                image={"https://www.gochile.cl/fotos/header/107639-img_0534.jpg"}
+                destiny={"Piedras Rojas"}
+                description={"Visita Toconao, el Salar de Atacama y las impresionantes Piedras Rojas en esta expedición de 4.200 msnm. Incluye desayuno, almuerzo, y guía bilingüe."}
+            />
+
+            <LargeCard
+                tag={"Lagunas Altiplánicas"}
+                image={"https://lh3.googleusercontent.com/p/AF1QipMV26tymLGJ-3Ie8che3lkebuTibFmEegSnStII=s680-w680-h510"}
+                destiny={"Lagunas Altiplánicas"}
+                description={"Explora las Lagunas Altiplánicas a 4.200 msnm, visitando Toconao, el Salar de Atacama y Socaire. Incluye desayuno, transporte y guía bilingüe."}
+            />
+
+            <LargeCard
+                tag={"Valle De La Luna"}
+                image={"https://lh3.googleusercontent.com/p/AF1QipMmZ4UQ2vriACFJVbBRh8sFTZwK6unMKuvMJle6=s680-w680-h510"}
+                destiny={"Valle De La Luna"}
+                description={"Explora el Valle de la Luna, un santuario natural a 2.400 msnm. Disfruta del Anfiteatro, la Duna Mayor y el mirador de Ckari. Incluye transporte y guía bilingüe."}
+            />
+
+            <LargeCard
+                tag={"Laguna Cejar"}
+                image={"https://www.gochile.cl/fotos/full/106412-cejar2016-6-.jpg"}
+                destiny={"Laguna Cejar"}
+                description={"Descubre la Laguna Cejar, un oasis turquesa en el Salar de Atacama. Flota en sus aguas salinas y disfruta de los Ojos del Salar y la Laguna Tebenquinche. Incluye transporte, guía bilingüe y snacks."}
+            />
+
+            <LargeCard
+                tag={"Termas de puritama"}
+                image={"https://d3jx1xy8vapgk8.cloudfront.net/wp-content/uploads/2022/05/termas-de-puritama-atacama-Explora.jpg"}
+                destiny={"Termas De Puritama"}
+                description={"Relájate en las Termas de Puritama, un oasis termal en medio del desierto, con aguas tibias entre 25 y 30ºC. Disfruta de 8 pozones con propiedades medicinales. Incluye transporte compartido."}
+            />
+
+            <LargeCard
+                tag={"Valle Del Arcoiris"}
+                image={"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/bc/57/a7/valle-arcoiris.jpg?w=1200&h=-1&s=1"}
+                destiny={"Valle Del Arcoiris"}
+                description={"Descubre el Valle del Arcoíris, con cerros de múltiples colores por la riqueza mineral. Visita petroglifos históricos en Hierbas Buenas y disfruta de transporte compartido con guía bilingüe y desayuno incluido."}
+            />
+        </div>
+    </section>
+
+    <section class="text-gray-900 font-sans p-6 text-center">
+        <h1 class="pb-10 font-bold text-3xl">¿Que más podemos ofrecerte?</h1>
+        <div class="flex flex-wrap justify-center">
+            
+            <LargeCard
+                tag={"Muy pronto"}
+                image={"https://denomades.s3.us-west-2.amazonaws.com/blog/wp-content/uploads/2016/10/06161936/20150420_150109_RichtoneHDR-2-losandesdesuranorte_blogspot_com.jpg"}
+                destiny={"Alquiler de Bicicletas"}
+                description={"Alquila bicicletas con nuestra agencia para explorar lugares cercanos como Valle de la Luna, Valle de Marte, y Laguna Cejar. Recomendado para amantes del ciclismo. Recuerda llevar lentes de sol, ropa cómoda y al menos 1.5 litros de agua. Contáctanos para precios y detalles."}
+            />
+
+            <LargeCard
+                tag={":)"}
+                image={"https://www.teletrans.cl/wp-content/uploads/2019/09/transporte-van.jpg"}
+                destiny={"Traslado | Transfers"}
+                description={"Ofrecemos traslados entre el aeropuerto de Calama y San Pedro de Atacama por $30,000 por persona, en ambas direcciones. Ideal para viajes cómodos y sin preocupaciones."}
+            />
         </div>
     </section>
 </Layout>
